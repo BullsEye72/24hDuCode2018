@@ -12,7 +12,7 @@ Description : a venir.
 
 ```
 Anthony Jaspers
-Julien Sculteur
+Julien Sculteur (Chef de projet)
 Valentin Moraine
 Romain Bignon
 ```
