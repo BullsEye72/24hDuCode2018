@@ -1,4 +1,4 @@
-# 24hDuCode2018
+# [REDACTED] Epreuve de programmation
 
 20-21 Janvier 2018
 
