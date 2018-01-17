@@ -11,8 +11,8 @@ Description : a venir.
 ## L'Equipe : Les Codeurs de la Galaxie
 
 ```
-Anthony Jaspers
 Julien Sculteur (Chef de projet)
+Anthony Jaspers
 Valentin Moraine
 Romain Bignon
 ```
