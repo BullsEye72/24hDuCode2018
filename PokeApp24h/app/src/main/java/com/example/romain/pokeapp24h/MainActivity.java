@@ -1,5 +1,8 @@
 package com.example.romain.pokeapp24h;
 
+import android.content.Context;
+import android.net.wifi.WifiConfiguration;
+import android.net.wifi.WifiManager;
 import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,6 +11,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String CONSOLE_LOGS = "ConsoleLogs";
@@ -15,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     public void connectPokemon(View v){
 
         logInConsole("Psykokwak Go !");
+
+        connectWifi();
 
         bottomConsole();
 
@@ -104,4 +111,24 @@ public class MainActivity extends AppCompatActivity {
         console.setText(consoleLogs);
     }
 
+    private void connectWifi(){
+
+        String networkSSID = "24HDUCODE";
+        String networkPass = "2018#24hcode!";
+
+        WifiConfiguration wifiConfig = new WifiConfiguration();
+
+        wifiConfig.SSID = String.format("\"%s\"", networkSSID);
+        wifiConfig.preSharedKey = String.format("\"%s\"", networkPass);
+
+        WifiManager wifiManager = (WifiManager)getSystemService(WIFI_SERVICE);
+
+        int netId = wifiManager.addNetwork(wifiConfig);
+
+        wifiManager.disconnect();
+
+        wifiManager.enableNetwork(netId, true);
+
+        wifiManager.reconnect();
+    }
 }
